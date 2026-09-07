@@ -31,10 +31,6 @@ Nothing you type or generate is ever saved anywhere. Closing the app forgets eve
 
 No external packages. `requirements.txt` is there mostly to say exactly that.
 
-## Screenshots
-
-*(add screenshots here once you've got the app running)*
-
 ## How to run it
 
 ```bash
