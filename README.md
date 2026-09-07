@@ -70,13 +70,13 @@ The score adds up to a Weak/Fair/Good/Strong rating, and every problem it finds 
 ## Project structure
 
 Lockbox/
-├── main.py # starts the app
-├── generator.py # password generation logic (no UI code)
-├── analyzer.py # password strength logic (no UI code)
-├── ui.py # tkinter interface, calls into the two files above
+├── main.py
+├── generator.py
+├── analyzer.py
+├── ui.py
 ├── README.md
-└── requirements.txt
-
+├── requirements.txt
+└── .gitignore
 
 I kept the logic files (`generator.py`, `analyzer.py`) separate from the UI file (`ui.py`) on purpose — you could test either one from a plain Python shell without touching tkinter at all.
 
