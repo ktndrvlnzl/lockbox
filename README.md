@@ -68,3 +68,34 @@ The score adds up to a Weak/Fair/Good/Strong rating, and every problem it finds 
 - Why storing real passwords in plaintext is dangerous — which is exactly why this app never stores anything at all
 
 ## Project structure
+
+Lockbox/
+├── main.py # starts the app
+├── generator.py # password generation logic (no UI code)
+├── analyzer.py # password strength logic (no UI code)
+├── ui.py # tkinter interface, calls into the two files above
+├── README.md
+└── requirements.txt
+
+
+I kept the logic files (`generator.py`, `analyzer.py`) separate from the UI file (`ui.py`) on purpose — you could test either one from a plain Python shell without touching tkinter at all.
+
+## Security limitations (read this before trusting it with anything real)
+
+This is a learning project, not a password manager:
+- It does **not** save, store, or transmit any password, anywhere, ever.
+- The strength analyzer only catches *known* bad patterns — it has no way of checking whether your password has already appeared in a real data breach.
+- No password generated or rated here is "unbreakable." Nothing is.
+- Don't build a real product on top of this without a lot more security review.
+
+## Future improvements
+
+Things I might add later, but deliberately didn't build now:
+- Password history — without ever storing the actual password (e.g. just showing "you generated 3 passwords this session")
+- Entropy estimation (an actual bits-of-randomness number, not just a Weak/Fair/Good/Strong label)
+- Checking against a larger, real leaked-password list
+- Better accessibility (keyboard navigation, screen reader labels)
+- Theme customization
+- A short in-app "why this matters" education section
+- A web version
+- Unit tests for `generator.py` and `analyzer.py`
